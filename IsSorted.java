@@ -7,9 +7,19 @@ public class IsSorted {
 
     // Helper recursive function
     private static boolean isSorted(int[] a, int i) {
-        //// Replace the following statement with your code
-        return false; 
+    // תנאי עצירה: מערך ריק, עם איבר אחד, או שהגענו לסוף הבדיקה בהצלחה
+    if (i >= a.length - 1) {
+        return true; 
     }
+
+    // בדיקה אם הזוג הנוכחי מפר את הכלל "סדר לא יורד" (כלומר הראשון גדול מהשני)
+    if (a[i] > a[i + 1]) {
+        return false;
+    }
+
+    // אם הכל תקין, ממשיכים לאינדקס הבא ברקורסיה
+    return isSorted(a, i + 1); 
+}
 
     public static void main(String[] args) {
         int[] a = {1, 2, 2, 5};
@@ -19,3 +29,4 @@ public class IsSorted {
         System.out.println(isSorted(b)); // false
     }
 }
+
