@@ -21,6 +21,6 @@ public class IntToBin {
         if (x % 2 != 0) {
             s = s + "1";
         }
-        return s + toBinary(x / 2);
+        return toBinary(x / 2) + s;
     }    
  }
